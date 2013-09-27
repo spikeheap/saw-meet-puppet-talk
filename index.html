@@ -135,7 +135,6 @@ class workstation( $apt_packages = [ 'thunderbird', 'enigmail' ] ){
 class workstation::packages::oraclejava( $ensure = 'present' ) {
 
   if $operatingsystem == 'Ubuntu'{
-    include apt
     apt::ppa { 'ppa:webupd8team/java': }
 
     exec { 'accept_java7_license':
